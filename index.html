@@ -1,0 +1,108 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Sharing Platform</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: lightblue;
+  }
+
+  .top-bar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+  }
+
+  .upload-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .videos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .video-card {
+    width: 300px;
+    margin: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .video-player {
+    width: 100%;
+  }
+</style>
+</head>
+<body>
+  <div class="top-bar">
+    <button class="upload-button" onclick="showFileInput()">Upload Video</button>
+    <input type="file" id="videoFile" accept="video/*" style="display: none;">
+  </div>
+  <h1 style="text-align: center;">Video Sharing Platform</h1>
+  <div class="videos-container">
+    <div class="video-card">
+      <video class="video-player" controls>
+        <source src="video1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="video-card">
+      <video class="video-player" controls>
+        <source src="video2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="video-card">
+      <video class="video-player" controls>
+        <source src="video3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <!-- Add more video cards as needed -->
+    <div class="video-card">
+      <video class="video-player" controls>
+        <source src="video4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="video-card">
+      <video class="video-player" controls>
+        <source src="video5.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="video-card">
+      <video class="video-player" controls>
+        <source src="video6.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <!-- Repeat for videos 7 to 10 -->
+  </div>
+  
+  <script>
+    function showFileInput() {
+      const fileInput = document.getElementById("videoFile");
+      fileInput.click();
+    }
+    
+    // Here you could add JavaScript to handle video upload and backend integration.
+  </script>
+</body>
+</html>
