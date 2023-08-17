@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MusicTube</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+
+  .upload-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .video-card {
+    background-color: #222;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 250px; /* Adjust the width as needed */
+  }
+
+  .video-title {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .video-player {
+    width: 100%;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Change to "flex-end" to align to the right */
+    margin: 0 auto;
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="#" class="logo">MusicTube</a>
+    <button class="upload-button">Upload Video</button>
+  </div>
+  <div class="container">
+    <div class="video-card">
+      <h2 class="video-title">Sajjan Raj Vaidya - Naganya Maya</h2>
+      <video class="video-player" controls>
+        <source src="n.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="video-card">
+      <h2 class="video-title">One Kiss</h2>
+      <video class="video-player" controls>
+        <source src="i.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="video-card">
+      <h2 class="video-title">Mockingbird</h2>
+      <video class="video-player" controls>
+        <source src="e.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="video-card">
+      <h2 class="video-title">Past lives</h2>
+      <video class="video-player" controls>
+        <source src="p.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <!-- Add more video cards as needed -->
+  </div>
+</body>
+</html>
