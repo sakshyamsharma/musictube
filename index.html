@@ -52,7 +52,10 @@
 <body>
   <div class="top-bar">
     <button class="upload-button" onclick="showFileInput()">Upload Video</button>
-    <input type="file" id="videoFile" accept="video/*" style="display: none;">
+    <form action="" method="POST" enctype="multipart/form-data" style="display: none;">
+      <input type="file" name="videoFile" accept="video/*">
+      <input type="submit" value="Upload" name="submit">
+    </form>
   </div>
   <h1 style="text-align: center;">Video Sharing Platform</h1>
   <div class="videos-container">
@@ -68,41 +71,58 @@
         Your browser does not support the video tag.
       </video>
     </div>
-    <div class="video-card">
-      <video class="video-player" controls>
-        <source src="video3.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
     <!-- Add more video cards as needed -->
-    <div class="video-card">
-      <video class="video-player" controls>
-        <source src="video4.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="video-card">
-      <video class="video-player" controls>
-        <source src="video5.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="video-card">
-      <video class="video-player" controls>
-        <source src="video6.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <!-- Repeat for videos 7 to 10 -->
   </div>
   
   <script>
     function showFileInput() {
-      const fileInput = document.getElementById("videoFile");
-      fileInput.click();
+      const fileInput = document.querySelector('input[type="file"]');
+      fileInput.style.display = 'block';
     }
-    
-    // Here you could add JavaScript to handle video upload and backend integration.
   </script>
+
+  <?php
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      $targetDir = 'uploads/';
+      $targetFile = $targetDir . basename($_FILES['videoFile']['name']);
+      $uploadOk = 1;
+      $videoFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+
+      // Check if file is an actual video
+      if (isset($_POST['submit'])) {
+          $check = getimagesize($_FILES['videoFile']['tmp_name']);
+          if ($check !== false) {
+              echo 'File is a video - ' . $check['mime'] . '<br>';
+              $uploadOk = 1;
+          } else {
+              echo 'File is not a video.<br>';
+              $uploadOk = 0;
+          }
+      }
+
+      // Check file size (adjust this according to your needs)
+      if ($_FILES['videoFile']['size'] > 100000000) {
+          echo 'Sorry, your file is too large.<br>';
+          $uploadOk = 0;
+      }
+
+      // Allow only certain video formats (add more formats if needed)
+      if ($videoFileType !== 'mp4') {
+          echo 'Sorry, only MP4 files are allowed.<br>';
+          $uploadOk = 0;
+      }
+
+      // Check if $uploadOk is set to 0 by an error
+      if ($uploadOk == 0) {
+          echo 'Sorry, your file was not uploaded.<br>';
+      } else {
+          if (move_uploaded_file($_FILES['videoFile']['tmp_name'], $targetFile)) {
+              echo 'The file ' . basename($_FILES['videoFile']['name']) . ' has been uploaded.<br>';
+          } else {
+              echo 'Sorry, there was an error uploading your file.<br>';
+          }
+      }
+  }
+  ?>
 </body>
 </html>
