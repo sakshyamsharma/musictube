@@ -65,11 +65,31 @@ body {
     margin: 0 auto;
     padding: 20px;
   }
+     .navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .logo img {
+    width: 40px; /* Adjust the image size as needed */
+    height: auto;
+    margin-right: 10px; /* Add spacing between logo and text */
+  }
 </style>
 </head>
 <body>
   <div class="navbar">
-    <a href="#" class="logo">MusicTube</a>
+    <a href="#" class="logo"><img src="lo.jpg" alt="Logo">MusicTube</a>
+      
     <button class="upload-button">Upload Video</button>
   </div>
   <div class="container">
