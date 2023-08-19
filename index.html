@@ -91,6 +91,16 @@ body {
     border: none;
     border-radius: 4px;
   }
+      .menu {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-item {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+  }
 </style>
 </head>
 <body>
@@ -100,7 +110,12 @@ body {
       <input type="text" class="search-bar" placeholder="Search videos...">
       <button type="submit" class="search-button">Search</button>
     </form>
-      
+       <div class="menu">
+      <a href="#" class="menu-item">Trending</a>
+      <a href="#" class="menu-item">Music</a>
+      <a href="#" class="menu-item">Gaming</a>
+      <a href="#" class="menu-item">Entertainment</a>
+    </div>
     <button class="upload-button">Upload Video</button>
   </div>
   <div class="container">
@@ -159,31 +174,7 @@ body {
         <source src="p.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-    </div>
-       <div class="video-card">
-      <h2 class="video-title">Cradles</h2>
-      <video class="video-player" controls>
-        <source src="su.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-            <div class="video-card">
-      <h2 class="video-title">Cradles</h2>
-      <video class="video-player" controls>
-        <source src="su.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-                 <div class="video-card">
-      <h2 class="video-title">Cradles</h2>
-      <video class="video-player" controls>
-        <source src="su.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-                      <div class="video-card">
-      <h2 class="video-title">Cradles</h2>
-      <video class="video-player" controls>
-        <source src="su.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+    </div>>
     <!-- Add more video cards as needed -->
   </div>
 </body>
