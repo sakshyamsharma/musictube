@@ -205,5 +205,23 @@ body {
   </div>
     <!-- Add more video cards as needed -->
   </div>
+     <script>
+    // Function to perform the search
+    function searchVideos() {
+      var searchTerm = document.getElementById("searchInput").value.toLowerCase();
+      var videoCards = document.getElementsByClassName("video-card");
+
+      for (var i = 0; i < videoCards.length; i++) {
+        var title = videoCards[i].getElementsByClassName("video-title")[0].innerText.toLowerCase();
+
+        // If the title contains the search term, show the video card; otherwise, hide it
+        if (title.includes(searchTerm)) {
+          videoCards[i].style.display = "block";
+        } else {
+          videoCards[i].style.display = "none";
+        }
+      }
+    }
+  </script>
 </body>
 </html>
